@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+<div class="container">
+    <form action="" method="post"  class="w-50 border border-2 mt-5 p-5 mx-auto shadow">
+        <h1 class="text-center fw-bold">Electricity Bill</h1>
+        {%csrf_token%}
+        {{form}}
+        <button type="submit" class="btn form-control btn-success">Calculate</button>
+        <div class="card mt-5">
+            <div class="card-body">
+                <h5 class="card-title">Bill Amount</h5>
+                
+                <p class="card-text ">Consumer Number: &nbsp;&nbsp;{{number}}</p>
+                <p class="card-text">Load:&nbsp;&nbsp;{{load}} KWh</p>
+                <p class="card-text">Phase:&nbsp;&nbsp;{{phase}}</p>
+                <p class="card-text">Current Reading:&nbsp;&nbsp;{{reading}}</p>
+                <p class="card-text">Previous Reading: &nbsp;&nbsp;{{prev_reading}}</p>
+                <p class="card-text">Rate:&nbsp;&nbsp;{{rate}}%</p>
+                <p class="card-text">Tax:&nbsp;&nbsp;{{tax}}</p>
+                <p class="card-text">Total:&nbsp;&nbsp;Rs.{{total}}</p>
+
+            </div>
+         
+
+        </div>
+        
+
+    </form>
+</div>
+{%endblock%}
